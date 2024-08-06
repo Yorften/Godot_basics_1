@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://ct311pjvh3fe6" path="res://assets/sprites/world_tileset.png" id="1_hfs8x"]
 [ext_resource type="PackedScene" uid="uid://d5p77hvd8mvk" path="res://scenes/moving_grass_platform.tscn" id="2_2d3vc"]
-[ext_resource type="PackedScene" uid="uid://myqjwl612f1r" path="res://scenes/coin.tscn" id="3_itbwe"]
-[ext_resource type="PackedScene" uid="uid://dpf6p0158serd" path="res://scenes/killzone.tscn" id="4_7tg21"]
+[ext_resource type="PackedScene" uid="uid://c5incpjh5sapp" path="res://scenes/coin.tscn" id="3_itbwe"]
+[ext_resource type="PackedScene" uid="uid://dpf6p0158serd" path="res://scenes/killzone/killzone.tscn" id="4_isn14"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5r7hh"]
 texture = ExtResource("1_hfs8x")
@@ -410,7 +410,8 @@ texture = ExtResource("1_hfs8x")
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_5r7hh")
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yf8gh"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_u15sd"]
+distance = -129.0
 
 [node name="level_1" type="TileMap"]
 tile_set = SubResource("TileSet_kfjlp")
@@ -439,8 +440,8 @@ position = Vector2(1002, -106)
 [node name="Coin5" parent="Coins" instance=ExtResource("3_itbwe")]
 position = Vector2(983, -106)
 
-[node name="killzone" parent="." instance=ExtResource("4_7tg21")]
+[node name="killzone" parent="." instance=ExtResource("4_isn14")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
-position = Vector2(372, 135)
-shape = SubResource("WorldBoundaryShape2D_yf8gh")
+position = Vector2(-1, -49)
+shape = SubResource("WorldBoundaryShape2D_u15sd")
