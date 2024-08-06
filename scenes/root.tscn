@@ -5,10 +5,13 @@
 
 [node name="root" type="Node2D"]
 
-[node name="level_1" parent="." instance=ExtResource("1_npnhh")]
-
 [node name="player" parent="." instance=ExtResource("1_au8ld")]
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(-1, -8)
 zoom = Vector2(4, 4)
+limit_bottom = 60
+limit_smoothed = true
+position_smoothing_enabled = true
+
+[node name="level_1" parent="." instance=ExtResource("1_npnhh")]
