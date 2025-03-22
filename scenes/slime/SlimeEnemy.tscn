@@ -1,6 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://b07tqaf34x4ex"]
+[gd_scene load_steps=10 format=3 uid="uid://b07tqaf34x4ex"]
 
 [ext_resource type="Texture2D" uid="uid://dajsewaktrv7f" path="res://assets/sprites/slime_green.png" id="1_aneje"]
+[ext_resource type="Script" path="res://scenes/slime/SlimeEnemy.gd" id="1_ch66h"]
+[ext_resource type="Script" path="res://states/State Machine.gd" id="3_t0mi7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vphwa"]
 atlas = ExtResource("1_aneje")
@@ -41,7 +43,8 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_424kq"]
 radius = 7.0
 
-[node name="slime" type="CharacterBody2D"]
+[node name="SlimeEnemy" type="CharacterBody2D"]
+script = ExtResource("1_ch66h")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
@@ -52,3 +55,6 @@ frame_progress = 0.192346
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_424kq")
+
+[node name="State Machine" type="Node" parent="."]
+script = ExtResource("3_t0mi7")
